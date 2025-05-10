@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard de Vendas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard de Vendas</h1>
+        <canvas id="vendasChart" width="400" height="200"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('vendasChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+                datasets: [{
+                    label: 'Vendas (R$)',
+                    data: [1200, 1900, 3000, 2500, 2200],
+                    backgroundColor: 'rgba(0, 102, 204, 0.6)'
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
